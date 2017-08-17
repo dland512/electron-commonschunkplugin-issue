@@ -1,0 +1,18 @@
+{
+  "name": "electron-commonschunkplugin-issue",
+  "version": "1.0.0",
+  "description": "Shows that electron won't run when the main process is built using Webpack's CommonsChunkPlugin",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run build:main && npm run build:renderer && electron ./build/main.bundle.js",
+    "build:renderer": "webpack --config webpack.rend.js --progress",
+    "build:main": "webpack --config webpack.main.js --progress"
+  },
+  "devDependencies": {
+    "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "file-loader": "^0.11.2",
+    "webpack": "^3.5.5"
+  }
+}
